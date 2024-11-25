@@ -9,7 +9,7 @@ const fs = require("fs");
 const app = express();
 app.use(
   cors({
-    origin: ["https://rm.toolscare.net"],
+    origin: ["https://ar.toolscare.net"],
     credentials: true,
   })
 );
@@ -114,44 +114,44 @@ app.post("/logOut", async (req, res) => {
 
 async function run() {
   try {
-    const database = client.db("hardwareShop");
-    const toolsCare1 = client.db("rmToolsCare");
 
-    const categoryCollections = toolsCare1.collection("categoryList");
-    const brandCollections = toolsCare1.collection("brandList");
-    const unitCollections = toolsCare1.collection("unitList");
-    const productCollections = toolsCare1.collection("productList");
-    const supplierCollections = toolsCare1.collection("supplierList");
-    const transactionCollections = toolsCare1.collection("transactionList");
-    const mainBalanceCollections = toolsCare1.collection("mainBalanceList");
-    const costingBalanceCollections = toolsCare1.collection("costingBalanceList");
-    const tempPurchaseProductCollections = toolsCare1.collection(
+    const toolsCare2 = client.db("arToolsCare");
+
+    const categoryCollections = toolsCare2.collection("categoryList");
+    const brandCollections = toolsCare2.collection("brandList");
+    const unitCollections = toolsCare2.collection("unitList");
+    const productCollections = toolsCare2.collection("productList");
+    const supplierCollections = toolsCare2.collection("supplierList");
+    const transactionCollections = toolsCare2.collection("transactionList");
+    const mainBalanceCollections = toolsCare2.collection("mainBalanceList");
+    const costingBalanceCollections = toolsCare2.collection("costingBalanceList");
+    const tempPurchaseProductCollections = toolsCare2.collection(
       "tempPurchaseProductList"
     );
-    const tempSalesProductCollections = toolsCare1.collection(
+    const tempSalesProductCollections = toolsCare2.collection(
       "tempSalesProductList"
     );
-    const tempQuotationProductCollections = toolsCare1.collection(
+    const tempQuotationProductCollections = toolsCare2.collection(
       "tempQuotationProductList"
     );
-    const stockCollections = toolsCare1.collection("stockList");
-    const purchaseInvoiceCollections = toolsCare1.collection(
+    const stockCollections = toolsCare2.collection("stockList");
+    const purchaseInvoiceCollections = toolsCare2.collection(
       "purchaseInvoiceList"
     );
-    const salesInvoiceCollections = toolsCare1.collection("salesInvoiceList");
-    const quotationCollections = toolsCare1.collection("quotationList");
-    const customerCollections = toolsCare1.collection("customerList");
-    const supplierDueCollections = toolsCare1.collection("supplierDueList");
-    const customerDueCollections = toolsCare1.collection("customerDueList");
-    const profitCollections = toolsCare1.collection("profitList");
-    const supplierDueBalanceCollections = toolsCare1.collection(
+    const salesInvoiceCollections = toolsCare2.collection("salesInvoiceList");
+    const quotationCollections = toolsCare2.collection("quotationList");
+    const customerCollections = toolsCare2.collection("customerList");
+    const supplierDueCollections = toolsCare2.collection("supplierDueList");
+    const customerDueCollections = toolsCare2.collection("customerDueList");
+    const profitCollections = toolsCare2.collection("profitList");
+    const supplierDueBalanceCollections = toolsCare2.collection(
       "supplierDueBalanceList"
     );
-    const customerDueBalanceCollections = toolsCare1.collection(
+    const customerDueBalanceCollections = toolsCare2.collection(
       "customerDueBalanceList"
     );
-    const returnSalesCollections = toolsCare1.collection("returnSalesList");
-    const returnPurchaseCollections = toolsCare1.collection("returnPurchaseList");
+    const returnSalesCollections = toolsCare2.collection("returnSalesList");
+    const returnPurchaseCollections = toolsCare2.collection("returnPurchaseList");
 
     // jwt
     app.post("/jwt", (req, res) => {
